@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">lab3</string>
+    <string name="text1">Программа для решения неравенства\nA|x|+B&lt;0 </string>
+    <string name="text2">Введите коэффициенты для неравенства\nA|x|+B&lt;0 </string>
+    <string name="math">Математика</string>
+    <string name="exit">Выход</string>
+    <string name="back">Назад</string>
+    <string name="send">Передать</string>
+    <string name="return_numb">Вернуть</string>
+    <string name="answer2">Здесь появится ответ, если вернуть в следующем окне</string>
+    <string name="about_the_author">Сведения об авторе:\n Добавление новых данных Исангулов Ринат студент группы БПО-18-02, создал данную программу в феврале 2021 года в целях выполнения лабораторной работы и получения
+    хороших баллов.\nЕсли возникли вопросы, присылайте письма на почту rinatrayan@mail.ru</string>
+</resources>
