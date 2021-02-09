@@ -33,6 +33,7 @@ public class WebActivity extends AppCompatActivity {
         wv.setWebViewClient(new MyClient());
     }
 
+    //переопределение метода shouldOverrideUrlLoading() на отображение результатов в текущем окне
     private class MyClient extends WebViewClient {
         @TargetApi(Build.VERSION_CODES.N)
         @Override
