@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>Акмяне</item>
+        <item>Алитус</item>
+        <item>Аникщяй</item>
+        <item>Арёгала</item>
+        <item>Балтойи-Воке</item>
+        <item>Биржай</item>
+        <item>Бирштонас</item>
+        <item>Вабальнинкас</item>
+        <item>Варена</item>
+        <item>Варняй</item>
+        <item>Вевис</item>
+        <item>Вейсеяй</item>
+        <item>Векшняй</item>
+        <item>Вилкавишкис</item>
+        <item>Вилькия</item>
+        <item>Вильнюс</item>
+        <item>Вирбалис</item>
+    </string-array>
+</resources>
