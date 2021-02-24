@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Кнопка "Задание 1"
+        //Кнопка "Задание 2"
         Button btn2 = (Button) findViewById(R.id.btn2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override

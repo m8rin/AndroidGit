@@ -13,6 +13,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:text="Выполнил ст. гр. БПО-18-02\nИсангулов Ринат" />
+
         <Button
             android:layout_marginTop="100dp"
             android:id="@+id/btn1"
