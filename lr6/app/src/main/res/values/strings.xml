@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">lr6</string>
+
+    <string-array name="countries2">
+        <item>Фр</item>
+        <item>Исп</item>
+        <item>Порту</item>
+    </string-array>
+
+    <string-array name="countries2">
+        <item>Фр</item>
+        <item>Исп</item>
+        <item>Порту</item>
+    </string-array>
+</resources>

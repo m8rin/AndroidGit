@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries">
+        <item>Франция</item>
+        <item>Испания</item>
+        <item>Португалия</item>
+        <item>Никарагуа</item>
+        <item>Монголия</item>
+        <item>Великобритания</item>
+        <item>Малайзия</item>
+        <item>Литва</item>
+        <item>Словакия</item>
+        <item>Польша</item>
+        <item>Эстония</item>
+        <item>Румыния</item>
+        <item>Молдова</item>
+        <item>Хорватия</item>
+        <item>Япония</item>
+        <item>Китай</item>
+        <item>Намибия</item>
+        <item>Мадагаскар</item>
+        <item>Белоруссия</item>
+        <item>Бангладеш</item>
+        <item>Алжир</item>
+        <item>Ангола</item>
+        <item>Греция</item>
+        <item>Киргизия</item>
+        <item>Мали</item>
+        <item>Непал</item>
+        <item>Южная Корея</item>
+        <item>КНДР</item>
+    </string-array>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Croatia">
+        <item>Загреб</item>
+        <item>Сплит</item>
+        <item>Риека</item>
+        <item>Осиек</item>
+        <item>Задар</item>
+        <item>Пула</item>
+        <item>Славонски-Брод</item>
+        <item>Карловац</item>
+        <item>Вараждин</item>
+        <item>Шибеник</item>
+        <item>Сисак</item>
+        <item>Винковцы</item>
+        <item>Велика-Горица</item>
+        <item>Дубровник</item>
+        <item>Бьеловар</item>
+        <item>Вуковар</item>
+        <item>Копривница</item>
+        <item>Солин</item>
+        <item>Запрешич</item>
+        <item>Пожега</item>
+        <item>Джяково</item>
+        <item>Самобор</item>
+        <item>Петринья</item>
+        <item>Меткович</item>
+        <item>Чаковец</item>
+    </string-array>
+</resources>
