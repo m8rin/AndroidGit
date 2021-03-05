@@ -8,17 +8,11 @@ import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import java.util.Random;
-
 public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 
     public static boolean check = false;
-
-    public static int a;
-
     private MyThread thread;
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    int cx, cy;
 
     public MySurfaceView(Context context) {
         super(context);
@@ -38,7 +32,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     private void init() {
         getHolder().addCallback(this);
         thread = new MyThread(getHolder(), this);
-        setFocusable(true); // make sure we get key events
+        setFocusable(true);
 
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(3);
@@ -77,8 +71,6 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     @Override
     public void onDraw(Canvas canvas) {
 
-
-
         int width = canvas.getWidth();
         int height = canvas.getHeight();
         canvas.drawColor(Color.WHITE);
@@ -88,22 +80,18 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
         if (check == true) {
             paint.setColor(Color.RED);
-            paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(a * fraction * fraction, height * fraction, 100-a, paint);
+            canvas.drawCircle(width * fraction * fraction, height * fraction, 100, paint);
             paint.setColor(Color.BLUE);
-            canvas.drawCircle(a*a*fraction, width * fraction * fraction, 180+a, paint);
+            canvas.drawCircle(500 * fraction, 2000 * fraction * fraction, 80, paint);
 
             paint.setColor(Color.GREEN);
-            canvas.drawCircle(width * fraction, 600+a, 200-2*a, paint);
+            canvas.drawCircle(width * fraction, 600, 60, paint);
 
             paint.setColor(Color.BLACK);
-            canvas.drawCircle(width*fraction+a, width * fraction* fraction, 350-5*a, paint);
+            canvas.drawCircle(width * fraction, width * fraction * fraction, 50, paint);
 
             paint.setColor(Color.MAGENTA);
-            canvas.drawCircle(800-a, height * fraction, 260/a, paint);
-            canvas.drawCircle(800, fraction*height, 10*a, paint);
+            canvas.drawCircle(800, height * fraction, 60, paint);
         }
     }
-
-
 }

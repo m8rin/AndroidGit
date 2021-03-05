@@ -9,10 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Random;
-
 public class Task3 extends Activity {
-    int parity = 1;
+    int parity = 1; //для определения четности нажатия на кнопку
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,8 +22,6 @@ public class Task3 extends Activity {
         buttonShowHide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Random rand = new Random();
-                MySurfaceView.a = rand.nextInt(20);
                 parity++;
                 if (parity % 2 == 0) {
                     buttonShowHide.setText("STOP");
@@ -44,6 +40,7 @@ public class Task3 extends Activity {
         try {
             MySurfaceView.check = false;
             MyThread.myThreadRun = false;
+
             Intent intent = new Intent(Task3.this, MainActivity.class);
             startActivity(intent);
             finish();

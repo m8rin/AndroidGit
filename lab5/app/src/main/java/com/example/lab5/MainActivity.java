@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, FileActivity.class);
                     startActivity(intent);
                 } catch (Exception e) {
-                    Log.w("Exception", "Не удалось открыть задание 1");
+                    Log.w("Exception", "Не удалось открыть задание 3");
                 }
             }
         });
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, Task2.class);
                     startActivity(intent);
                 } catch (Exception e) {
-                    Log.w("Exception", "Не удалось открыть задание 2");
+                    Log.w("Exception", "Не удалось открыть задание 3");
                 }
             }
         });
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
     }
     //Системная кнопка "назад"

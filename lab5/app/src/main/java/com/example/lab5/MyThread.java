@@ -26,6 +26,7 @@ public class MyThread extends Thread {
     @SuppressLint("WrongCall")
     @Override
     public void run() {
+        // TODO Auto-generated method stub
         while(myThreadRun){
             Canvas c = null;
 
