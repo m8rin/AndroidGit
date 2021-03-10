@@ -26,7 +26,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     EditText editText;
-    Button btnAdd, btnReset, btnOpenAdd;
+    Button btnReset, btnOpenAdd;
     RecyclerView rv;
 
     List<MainData> dataList = new ArrayList<>();
@@ -40,7 +40,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         editText = findViewById(R.id.edit_text);
-        btnAdd = findViewById(R.id.btn_add);
         btnReset = findViewById(R.id.btn_reset);
         rv = findViewById(R.id.rv);
 
@@ -53,39 +52,23 @@ public class MainActivity extends Activity {
         adapter = new MainAdapter(MainActivity.this, dataList);
 
         rv.setAdapter(adapter);
-/*
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String sText = editText.getText().toString().trim();
-
-                if (!sText.equals("")) {
-                    //when text is not empty
-                    MainData data = new MainData();
-                    data.setText(sText);
-                    database.mainDao().insert(data);
-
-                    editText.setText("");
-
-                    dataList.clear();
-                    dataList.addAll(database.mainDao().getAll());
-                    adapter.notifyDataSetChanged();
-                }
-            }
-        });*/
-
 
         String Sub = getIntent().getStringExtra("Sub");
-        String sText = editText.getText().toString().trim() + "" + Sub;
+        String Teach = getIntent().getStringExtra("Teach");
+        String Cab = getIntent().getStringExtra("Cab");
 
-        if (!sText.equals("")) {
-            //when text is not empty
+        String subject = editText.getText().toString().trim() + Sub;
+        String teacher = editText.getText().toString().trim() + Teach;
+        String cabinet = editText.getText().toString().trim() + Cab;
+
+        if (!subject.equals("") || !subject.equals(null)) {
             MainData data = new MainData();
-            data.setText(sText);
+
+            data.setSubject(subject);
+            data.setTeacher(teacher);
+            data.setCabinet(cabinet);
 
             database.mainDao().insert(data);
-
             editText.setText("");
 
             dataList.clear();
@@ -93,12 +76,14 @@ public class MainActivity extends Activity {
             adapter.notifyDataSetChanged();
         }
 
+        //кнопка "Открытие окна добавления"
         btnOpenAdd = findViewById(R.id.btn_open_add);
         btnOpenAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, AddActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 

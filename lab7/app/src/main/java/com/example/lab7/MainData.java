@@ -7,17 +7,23 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+import static org.xmlpull.v1.XmlPullParser.TEXT;
+
 //define table name
 @Entity(tableName = "table_name")
-public class MainData implements Serializable {
-    //create id column
+public class MainData {
+
     @PrimaryKey(autoGenerate = true)
     private int ID;
 
-    //create text column
-    @ColumnInfo(name = "text")
-    private String text;
-    //Generate getter and setter
+    @ColumnInfo(name = "teacher")
+    private String teacher;
+
+    @ColumnInfo(name = "subject")
+    private String subject;
+
+    @ColumnInfo(name = "cabinet")
+    private String cabinet;
 
     public int getID() {
         return ID;
@@ -27,12 +33,28 @@ public class MainData implements Serializable {
         this.ID = ID;
     }
 
-    public String getText() {
-        return text;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String name) {
+        this.teacher = name;
+    }
+
+    public void setCabinet(String cabinet) {
+        this.cabinet = cabinet;
+    }
+
+    public String getCabinet() {
+        return cabinet;
     }
 }
 

@@ -33,7 +33,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_row_main, parent, false);
         return new ViewHolder(view);
@@ -46,7 +45,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
         database = RoomDB.getInstance(context);
 
-        holder.textView.setText(data.getText());
+        holder.textView.setText(data.getSubject());
+        holder.textView2.setText(data.getTeacher());
+        holder.textView3.setText(data.getCabinet());
 
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 MainData d = dataList.get(holder.getAdapterPosition());
 
                 int sID = d.getID();
-                String sText = d.getText();
+                String subject = d.getSubject();
+                String teacher = d.getTeacher();
+                String cabinet = d.getCabinet();
 
                 Dialog dialog = new Dialog(context);
 
@@ -66,11 +69,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 dialog.show();
 
                 EditText editText1 = dialog.findViewById(R.id.edit_text1);
+                EditText editText2 = dialog.findViewById(R.id.edit_text2);
+                EditText editText3 = dialog.findViewById(R.id.edit_text3);
 
                 Button btnUpdate = dialog.findViewById(R.id.btn_update);
 
-                editText1.setText(sText);
-
+                editText1.setText(subject);
+                editText2.setText(teacher);
+                editText3.setText(cabinet);
 
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -78,16 +84,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         //dismiss dialog
                         dialog.dismiss();
 
-                        String aText = editText1.getText().toString().trim();
-                        database.mainDao().update(sID,aText);
+                        String subject = editText1.getText().toString().trim();
+                        String teacher = editText2.getText().toString().trim();
+                        String cabinet = editText3.getText().toString().trim();
 
+                        database.mainDao().update(sID, subject, teacher, cabinet);
                         dataList.clear();
                         dataList.addAll(database.mainDao().getAll());
                         notifyDataSetChanged();
                     }
                 });
-
-
             }
         });
 
@@ -114,19 +120,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView, textViewTeacher, textViewRoom;
+        TextView textView, textView2, textView3;
         ImageView btnEdit, btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textView = itemView.findViewById(R.id.textView);
-            textViewTeacher = itemView.findViewById(R.id.textViewTeacher);
-            textViewRoom = itemView.findViewById(R.id.textViewRoom);
+            textView2 = itemView.findViewById(R.id.textViewTeacher);
+            textView3 = itemView.findViewById(R.id.textViewCabinet);
 
             btnEdit = itemView.findViewById(R.id.btn_edit);
             btnDelete= itemView.findViewById(R.id.btn_delete);
-
         }
     }
 }
