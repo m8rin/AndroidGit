@@ -5,13 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".AddActivity">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_text"
-        android:hint="Enter text"
+        android:id="@+id/edit_text1"
+        android:hint="Enter sub"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text2"
+        android:hint="Enter teacher"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text3"
+        android:hint="Enter room"
+        android:inputType="numberSigned"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         />
@@ -23,25 +42,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_open_add"
+            android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Open Add" />
+            android:text="Add" />
 
-        <Button
-            android:id="@+id/btn_reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Reset" />
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rv"
-        android:layout_marginTop="8dp"
-        tools:listitem="@layout/list_row_main"/>
 
 </LinearLayout>
