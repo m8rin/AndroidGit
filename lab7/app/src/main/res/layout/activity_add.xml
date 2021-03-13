@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:padding="16dp"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".AddActivity">
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/edit_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
         android:hint="Введите предмет"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        />
+        android:padding="12dp" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/edit_text2"
-        android:hint="Введите преподователя"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        />
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:hint="Введите преподователя"
+        android:padding="12dp" />
+
+    <EditText
         android:id="@+id/edit_text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
         android:hint="Введите кабинет"
         android:inputType="numberSigned|numberDecimal"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        />
+        android:padding="12dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

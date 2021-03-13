@@ -23,8 +23,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private Activity context;
     private RoomDB database;
 
-    //Create constructor
-    public MainAdapter(Activity context, List<MainData> dataList){
+    //Создаем конструктор
+    public MainAdapter(Activity context, List<MainData> dataList) {
         this.context = context;
         this.dataList = dataList;
         notifyDataSetChanged();
@@ -81,7 +81,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //dismiss dialog
                         dialog.dismiss();
 
                         String subject = editText1.getText().toString().trim();
@@ -131,7 +130,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             textView3 = itemView.findViewById(R.id.textViewCabinet);
 
             btnEdit = itemView.findViewById(R.id.btn_edit);
-            btnDelete= itemView.findViewById(R.id.btn_delete);
+            btnDelete = itemView.findViewById(R.id.btn_delete);
         }
     }
 }

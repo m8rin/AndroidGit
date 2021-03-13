@@ -14,7 +14,10 @@ import android.view.View.OnClickListener;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,9 +27,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
+    private long backPressedTime;
+    private Toast backToast;
 
     EditText editText;
-    Button btnReset, btnOpenAdd;
+    TextView textView;
+    Button btnReset, btnOpenAdd, btnReturn;
+    ImageView btnSearch;
     RecyclerView rv;
 
     List<MainData> dataList = new ArrayList<>();
@@ -41,7 +48,10 @@ public class MainActivity extends Activity {
 
         editText = findViewById(R.id.edit_text);
         btnReset = findViewById(R.id.btn_reset);
+        btnSearch = findViewById(R.id.btn_search);
+        btnReturn = findViewById(R.id.btn_return);
         rv = findViewById(R.id.rv);
+        textView = findViewById(R.id.textViewSearch);
 
         database = RoomDB.getInstance(this);
 
@@ -50,18 +60,13 @@ public class MainActivity extends Activity {
         linearLayoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(linearLayoutManager);
         adapter = new MainAdapter(MainActivity.this, dataList);
-
         rv.setAdapter(adapter);
 
-        String Sub = getIntent().getStringExtra("Sub");
-        String Teach = getIntent().getStringExtra("Teach");
-        String Cab = getIntent().getStringExtra("Cab");
+        String subject = "" + getIntent().getStringExtra("Sub");
+        String teacher = "" + getIntent().getStringExtra("Teach");
+        String cabinet = "" + getIntent().getStringExtra("Cab");
 
-        String subject = editText.getText().toString().trim() + Sub;
-        String teacher = editText.getText().toString().trim() + Teach;
-        String cabinet = editText.getText().toString().trim() + Cab;
-
-        if (!subject.equals("") || !subject.equals(null)) {
+        if (!subject.equals("null")) {
             MainData data = new MainData();
 
             data.setSubject(subject);
@@ -87,6 +92,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        //кнопка "удалить все"
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,5 +103,62 @@ public class MainActivity extends Activity {
                 adapter.notifyDataSetChanged();
             }
         });
+
+        //кнопка поиска
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //добавляем %, чтобы находить все записи, которые содержат вводимое значение
+                String search = "%" + editText.getText().toString().trim() + "%";
+                database.mainDao().getAllWithNameLike(search);
+
+                dataList.clear();
+                dataList.addAll(database.mainDao().getAllWithNameLike(search));
+                adapter.notifyDataSetChanged();
+
+                search = editText.getText().toString().trim();
+                textView.setText("Результаты по запросу: " + search);
+
+                btnReturn.setVisibility(View.VISIBLE);
+                btnReturn.setLayoutParams(new LinearLayout.LayoutParams(1000, 150));
+
+                if (search.equals("")) {
+                    textView.setText("");
+                    dataList.clear();
+                    dataList.addAll(database.mainDao().getAll());
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
+
+        //кнопка "вернуться к списку"
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText("");
+
+                dataList.clear();
+                dataList.addAll(database.mainDao().getAll());
+                adapter.notifyDataSetChanged();
+
+                btnReturn.setVisibility(View.INVISIBLE);
+                btnReturn.setLayoutParams(new LinearLayout.LayoutParams(1000, 0));
+            }
+        });
+    }
+
+    //Системная кнопка "назад"
+    //Выход из приложения двойным кликом
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            finish();
+            return;
+        } else {
+            backToast = Toast.makeText(this, "Нажмите ещё раз, чтобы выйти", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 }

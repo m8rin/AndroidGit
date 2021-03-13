@@ -25,7 +25,6 @@ public class AddActivity extends AppCompatActivity {
     List<MainData> dataList = new ArrayList<>();
     RoomDB database;
 
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class AddActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.edit_text1);
         editText2 = findViewById(R.id.edit_text2);
         editText3 = findViewById(R.id.edit_text3);
-
         btnAdd = findViewById(R.id.btn_add);
 
         database = RoomDB.getInstance(this);
@@ -44,14 +42,25 @@ public class AddActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(AddActivity.this,MainActivity.class);
-                i.putExtra("Sub", editText1.getText().toString());
-                i.putExtra("Teach", editText2.getText().toString());
-                i.putExtra("Cab", editText3.getText().toString());
+                Intent i = new Intent(AddActivity.this, MainActivity.class);
+                i.putExtra("Sub", editText1.getText().toString().trim());
+                i.putExtra("Teach", editText2.getText().toString().trim());
+                i.putExtra("Cab", editText3.getText().toString().trim());
                 startActivity(i);
                 finish();
             }
         });
+    }
+
+    //Системная кнопка назад
+    @Override
+    public void onBackPressed() {
+        try {
+            Intent intent = new Intent(AddActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+            Log.w("Exception", "Не удалось перейти по системной кнопке назад");
+        }
     }
 }
