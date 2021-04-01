@@ -28,24 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f3df93b-6b0c-426b-a802-23d9cc324c21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/java/isangulov/kursovaya/stolovka/ui/home/Contact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/java/isangulov/kursovaya/stolovka/ui/home/RecycleViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/res/drawable/chi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/res/drawable/plov.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/res/drawable/puree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/res/drawable/reklama.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Stolovka/app/src/main/res/layout/item_contact.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab8/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab8/RetrofitActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab8/StartActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab8/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab8/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_retrofit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +38,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[1e10ea7e0406]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -188,10 +171,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="498" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1617265714599" />
-    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1617200890154">
+    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1617274046514">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1617200890154" />
+    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1617274046514" />
     <state width="1556" height="215" key="GridCell.Tab.0.bottom" timestamp="1617267667055">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
