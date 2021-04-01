@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Stolovka</string>
-    <string name="title_activity_main">Столовка</string>
-    <string name="title_home">Начало</string>
-    <string name="title_menu">Меню</string>
-    <string name="title_basket">Корзина</string>
-    <string name="title_favorites">Избранное</string>
-    <string name="title_profile">Профиль</string>
-</resources>
