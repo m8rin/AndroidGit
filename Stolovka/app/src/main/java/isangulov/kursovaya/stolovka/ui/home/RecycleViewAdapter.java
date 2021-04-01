@@ -1,18 +1,17 @@
-package com.example.mahadi.frgmtandrcycle;
+package isangulov.kursovaya.stolovka.ui.home;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-/**
- * Created by Mahadi on 3/11/2018.
- */
+import isangulov.kursovaya.stolovka.R;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.MyViewHolder> {
 
@@ -54,7 +53,6 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
             name = (TextView) itemView.findViewById(R.id.name_contact);
             phone_num = (TextView) itemView.findViewById(R.id.ph_number);
             imageView = (ImageView) itemView.findViewById(R.id.img);

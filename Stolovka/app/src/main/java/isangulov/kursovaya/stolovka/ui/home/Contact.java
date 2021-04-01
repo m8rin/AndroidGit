@@ -1,8 +1,5 @@
-package com.example.mahadi.frgmtandrcycle;
+package isangulov.kursovaya.stolovka.ui.home;
 
-/**
- * Created by Mahadi on 3/11/2018.
- */
 
 public class Contact {
 
